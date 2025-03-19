@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Prabhav Badhani -<B>Portfolio</B> </title>
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background: #f5f5f5;
+        }
+
+        /* Header Styles */
+        .header {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            background: #000; /* Black */
+            color: #fff;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .menu-btn {
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .menu-line {
+            width: 25px;
+            height: 3px;
+            background: #fff;
+            margin: 4px 0;
+        }
+
+        .name {
+            margin-left: 20px;
+            font-size: 26px;
+            font-weight: bold;
+            color: #fff; /* White */
+        }
+
+        /* Dropdown Menu */
+        .dropdown-content {
+            display: none;
+            position: fixed;
+            background: #4CAF50; /* Mild Green */
+            min-width: 160px;
+            border-radius: 8px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            top: 60px;
+            left: 20px;
+            z-index: 1001;
+        }
+
+        .dropdown-content a {
+            color: #fff;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            border-bottom: 1px solid #ffffff44;
+        }
+
+        .dropdown-content a:hover {
+            background: #388E3C; /* Darker Green */
+        }
+
+        .show { display: block; }
+
+        /* Page Content */
+        .page-content {
+            margin-top: 100px;
+            padding: 40px 20px;
+            display: none;
+            text-align: center;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .active-page {
+            display: block;
+        }
+
+        /* Home Page Styles */
+        .portfolio-heading {
+            background: #f0f0f0;  /* Light Grey */
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            font-size: 3em;
+            color: #333; /* Dark Text */
+            margin-bottom: 30px;
+        }
+
+        .intro-text {
+            font-size: 1.3em;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        .profile-photo {
+            width: 250px;
+            height: 300px;
+            border: 5px solid #1f222a;
+            border-radius: 15px;
+            margin: 20px auto 40px;
+            object-fit: cover;
+            display: block;
+            background: #fff;
+            padding: 5px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .video-section {
+            margin: 40px auto;
+            max-width: 600px;
+        }
+
+        .intro-video {
+            width: 100%;
+            height: 300px;
+            border-radius: 15px;
+        }
+
+        .video-text {
+            margin-top: 15px;
+            font-size: 1.2em;
+            color: #1e3a8a;
+        }
+
+        /* Assignment Page Styles */
+        .movie-title {
+            background: #4CAF50;  /* Green */
+            color: #fff;
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 2.2em;
+            margin: 20px 0;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .movie-poster {
+            width: 300px;
+            height: auto;
+            margin: 20px 0;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .review-text {
+            line-height: 1.8;
+            color: #333;
+            text-align: justify;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .profile-photo {
+                width: 200px;
+                height: 250px;
+            }
+            .intro-video {
+                height: 200px;
+            }
+            .movie-poster {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <div class="header">
+        <div class="menu-btn" onclick="toggleMenu()">
+            <div class="menu-line"></div>
+            <div class="menu-line"></div>
+            <div class="menu-line"></div>
+        </div>
+        <div class="name">Prabhav Badhani</div>
+    </div>
+
+    <!-- Dropdown Menu -->
+    <div id="myDropdown" class="dropdown-content">
+        <a href="#home" onclick="showPage('home-page')">Home</a>
+        <a href="#assignment" onclick="showPage('assignment-page')">Assignment</a>
+    </div>
+
+    <!-- Home Page -->
+    <div id="home-page" class="page-content active-page">
+        <h1 class="portfolio-heading">Portfolio</h1>
+        <p class="intro-text">Hi I am Prabhav Badhani and this is my portfolio</p>
+        
+        <img src="kit.jpeg" alt="Profile Photo" class="profile-photo"><br>
+        <br>
+        <br>
+
+        <div class="video-section">
+            <iframe class="intro-video"
+                src="https://drive.google.com/file/d/1H52_DGotiZVeQZaGzE6cWwTOIkkcOB76/preview"
+                frameborder="0"
+                allowfullscreen>
+            </iframe>
+            <p class="video-text">week-1  Sixer Introduction </p><br>
+            <br>
+            <br>
+        </div>
+        <div class="video-section">
+            <iframe class="intro-video"
+                src="https://drive.google.com/file/d/1HA4DChpiBM5SYmMmbQG65kkfzwPaudNq/preview"
+                frameborder="0"
+                allowfullscreen>
+            </iframe>
+            <p class="video-text"> Week-2  Fiver Introduction </p>
+        </div>
+    </div>
+
+    <!-- Assignment Page -->
+    <div id="assignment-page" class="page-content">
+        <h1 class="movie-title">The Shawshank Redemption</h1>
+        <img src=https://i.pinimg.com/736x/e1/47/55/e14755e4e05c8c06f710db4c3bed0d50.jpg alt="Movie Poster" class="movie-poster">
+        <p class="review-text">
+            <h2>-> My Favourite Dialogue and Why?</h2><br>
+            <p>
+                <b>"That's the beauty of music. They can't take that away from you." — Andy Dufresne
+                    "</b><br><br>
+                    I like this dialogue because it shows that some things, like music, peace of mind, or hope, cannot be taken away from a person. When Andy played Mozart's music in the prison, it gave all the prisoners a moment of freedom and comfort. This dialogue teaches
+                     us that no matter how hard life gets, we can always find strength in small things that bring us joy.
+            </p><br>
+            
+            <h2>-> My Personal Review</h2><br>
+            <p>
+                <i>The Shawshank Redemption</i> The Shawshank Redemption is a powerful movie about hope, courage, and friendship. The story is about Andy Dufresne, a man wrongly accused of murder, who never gives up even in tough times. Andy uses his intelligence and patience to improve life inside the prison and plan his escape. I enjoyed the strong bond between Andy and Red, which added depth to the story.
+                 The ending was emotional and inspiring, showing that hard work and hope can lead to success.
+            </p><<br>
+        
+            <h2>-> Learning to Take Away from the Movie</h2><br>
+            <p>
+                The movie teaches us:
+
+Never lose hope: Andy stayed positive even when things were difficult.
+
+Patience and planning: Andy took small steps for years to achieve his goal.
+
+True friendship matters: Andy and Red’s friendship gave them strength.
+
+Believe in yourself: Andy trusted his ideas and worked silently towards his freedom.
+            </p><br>
+        
+            <h2>-> Related Concepts Learned in the Classroom</h2><br>
+            <p>
+                In class, we learned about:
+
+                Emotional strength: Andy’s calm nature shows how staying strong mentally can help during tough times.
+                
+                Problem-solving skills: Andy’s clever ideas, like helping guards with taxes and improving the library, show creativity and leadership.
+                
+                Moral values: Andy always chose the right path, proving that honesty and kindness matter.
+        
+            
+        </p><br>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const dropdown = document.getElementById("myDropdown");
+            dropdown.classList.toggle("show");
+        }
+
+        function showPage(pageId) {
+            document.querySelectorAll('.page-content').forEach(page => {
+                page.classList.remove('active-page');
+            });
+            document.getElementById(pageId).classList.add('active-page');
+        }
+
+        window.onclick = function(event) {
+            if (!event.target.matches('.menu-btn')) {
+                const dropdown = document.getElementById("myDropdown");
+                if (dropdown.classList.contains('show')) {
+                    dropdown.classList.remove('show');
+                }
+            }
+        }
+    </script>
+</body>
+</html> 
